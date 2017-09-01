@@ -1,0 +1,33 @@
+#DRUID
+druid: 
+    url: jdbc:mysql://localhost:3306/mysql?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 
+    initial-size: 5
+    min-idle: 5
+    max-active: 30
+    driver-class: com.mysql.jdbc.Driver
+    test-on-borrow: true
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 1 FROM DUAL
+    test-While-Idle: true
+    test-on-return: false
+    pool-prepared-statements: false
+    max-pool-prepared-statement-per-connection-size: 20
+    filters: stat,wall,log4j,config
+    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;druid.log.conn=false;druid.log.stmt.executableSql=false
+    monitor: 
+          enabled: enabled # 配置此属性Monitor才生效
+          druid-stat-view: /druid/*
+          druid-web-stat-filter: /*
+          allow: 127.0.0.1
+          deny: 123.123.123.123
+          login-username: admin
+          login-password: qwe123zxc
+          exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+          reset-enable: false
+          
+
+
