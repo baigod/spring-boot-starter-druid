@@ -1,11 +1,13 @@
-package com.szzc.spring.boot.starter.druid.config;
+package me.douboo.springboot.druid.config.secondly;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "druid")
-public class DruidProperties {
+import me.douboo.springboot.druid.config.Monitor;
 
-	private String name="druid-dataSource-primary"; 
+@ConfigurationProperties(prefix = "druid.secondly")
+public class DruidSecondlyProperties {
+
+	private String name="druid-dataSource-secondly"; 
 	
 	private String url = "jdbc:mysql://localhost:3306/mysql?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf-8";
 	private String username = "root";
@@ -189,7 +191,5 @@ public class DruidProperties {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	
 
 }

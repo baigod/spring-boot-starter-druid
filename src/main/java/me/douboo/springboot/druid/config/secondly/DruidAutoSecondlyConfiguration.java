@@ -1,4 +1,4 @@
-package com.szzc.spring.boot.starter.druid.config.secondly;
+package me.douboo.springboot.druid.config.secondly;
 
 import java.sql.SQLException;
 

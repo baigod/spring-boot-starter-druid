@@ -1,4 +1,4 @@
-package com.szzc.spring.boot.starter.druid.config;
+package me.douboo.springboot.druid.config;
 
 public class Monitor {
 

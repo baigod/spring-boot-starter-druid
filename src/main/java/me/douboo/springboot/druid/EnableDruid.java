@@ -1,4 +1,4 @@
-package com.szzc.spring.boot.starter.druid;
+package me.douboo.springboot.druid;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -8,8 +8,8 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Import;
 
-import com.szzc.spring.boot.starter.druid.config.DruidAutoConfiguration;
-import com.szzc.spring.boot.starter.druid.config.DruidMonitorAutoConfiguration;
+import me.douboo.springboot.druid.config.DruidAutoConfiguration;
+import me.douboo.springboot.druid.config.DruidMonitorAutoConfiguration;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
