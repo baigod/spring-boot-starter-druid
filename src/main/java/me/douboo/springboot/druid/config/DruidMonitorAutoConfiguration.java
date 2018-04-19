@@ -37,11 +37,11 @@ public class DruidMonitorAutoConfiguration {
      * @return ServletRegistrationBean
      */
     @Bean
-    public ServletRegistrationBean druidStatViewServlet(){
+    public ServletRegistrationBean<StatViewServlet> druidStatViewServlet(){
 
         Monitor properties = druidProperties.getMonitor();
         //org.springframework.boot.context.embedded.ServletRegistrationBean提供类的进行注册.
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),properties.getDruidStatView());
+        ServletRegistrationBean<StatViewServlet> servletRegistrationBean = new ServletRegistrationBean<StatViewServlet>(new StatViewServlet(),properties.getDruidStatView());
 
         //添加初始化参数：initParams
         //白名单：
@@ -66,9 +66,9 @@ public class DruidMonitorAutoConfiguration {
      * @return FilterRegistrationBean
      */
     @Bean
-    public FilterRegistrationBean druidStatFilter(){
+    public FilterRegistrationBean<WebStatFilter> druidStatFilter(){
 
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
+        FilterRegistrationBean<WebStatFilter> filterRegistrationBean = new FilterRegistrationBean<WebStatFilter>(new WebStatFilter());
         Monitor properties = druidProperties.getMonitor();
         //添加过滤规则.
         filterRegistrationBean.addUrlPatterns(properties.getDruidWebStatFilter());
